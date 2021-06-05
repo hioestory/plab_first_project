@@ -24,7 +24,7 @@ class Splash extends State<SplashScreen> {
         'assets/images/splash_plablogo.png'); //<- Creates an object that fetches an image.
     var image = new Image(
         image: assetsImage,
-        height: 300); //<- Creates a widget that displays an image.
+        height: 100); //<- Creates a widget that displays an image.
 
     return MaterialApp(
       home: Scaffold(
