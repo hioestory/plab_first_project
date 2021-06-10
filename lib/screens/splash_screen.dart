@@ -11,20 +11,23 @@ class Splash extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-  }
 
-  @override
-  Widget build(BuildContext context) {
+    // 역할을 분리하는 게 좋음
+    // build에 있어도 되지만 적합하지 않음
     Timer(
         Duration(seconds: 3),
         () => Navigator.of(context).pushReplacement(MaterialPageRoute(
             builder: (BuildContext context) => MainScreen())));
+  }
+
+  @override
+  Widget build(BuildContext context) {
 
     var assetsImage = new AssetImage(
-        'assets/images/splash_plablogo.png'); //<- Creates an object that fetches an image.
+        'assets/images/splash_plablogo.png'); 
     var image = new Image(
         image: assetsImage,
-        height: 100); //<- Creates a widget that displays an image.
+        height: 100); 
 
     return MaterialApp(
       home: Scaffold(
@@ -34,11 +37,13 @@ class Splash extends State<SplashScreen> {
               Colors.blue, //<- background color to combine with the picture :-)
         ),*/
         body: Container(
+
+          // decoration이 뭔지 잘 이해 못한 것 같은데? 왜 넣었지?
           decoration: new BoxDecoration(color: Colors.white),
           child: new Center(
             child: image,
           ),
-        ), //<- place where the image appears
+        ),
       ),
     );
   }

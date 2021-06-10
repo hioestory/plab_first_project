@@ -5,6 +5,20 @@ import './detail_screen.dart';
 //
 import 'package:plab_first_project/models/Stadium.dart';
 
+
+/*
+
+  DetailScreen으로 id만 전달하고
+  DetailScreen에서 /api/v2/stadium-groups/{id}/ 를 호출하는 방식으로 변경하세요
+  /api/v2/stadium-groups/{id}/ 는 Stadium.dart에 메소드로 만들어 호출하면 됩니다
+
+
+  요약
+  - MainScreen에서 List 호출
+  - DetailScreen에서 Detail 호출
+
+*/
+
 class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
