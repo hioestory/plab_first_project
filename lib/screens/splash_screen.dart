@@ -22,12 +22,8 @@ class Splash extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-
-    var assetsImage = new AssetImage(
-        'assets/images/splash_plablogo.png'); 
-    var image = new Image(
-        image: assetsImage,
-        height: 100); 
+    var assetsImage = new AssetImage('assets/images/splash_plablogo.png');
+    var image = new Image(image: assetsImage, height: 100);
 
     return MaterialApp(
       home: Scaffold(
@@ -37,9 +33,7 @@ class Splash extends State<SplashScreen> {
               Colors.blue, //<- background color to combine with the picture :-)
         ),*/
         body: Container(
-
           // decoration이 뭔지 잘 이해 못한 것 같은데? 왜 넣었지?
-          decoration: new BoxDecoration(color: Colors.white),
           child: new Center(
             child: image,
           ),

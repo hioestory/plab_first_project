@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-
 import './detail_screen.dart';
-
 //
-import 'package:plab_first_project/models/Stadium.dart';
-
+import 'package:plab_first_project/models/Instagram.dart';
 
 /*
 
@@ -42,24 +39,31 @@ class _MainListState extends State<MainListExample> {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<List<Stadium>>(
-        future: Stadium.fetchStadiums(),
+    return FutureBuilder<List<Instagram>>(
+        future: Instagram.fetchStadiums(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            Stadium stadium = snapshot.data[0];
+            Instagram instagram = snapshot.data[0];
             return Scaffold(
               body: ListView.builder(
                 itemCount: snapshot.data.length,
                 itemBuilder: (context, index) {
-                  return ListTile(
-                    title: Text('${snapshot.data[index].name}'),
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) =>
-                                  DetailScreen(snapshot.data[index])));
-                    },
+                  return Container(
+                    color: Colors.amber,
+                    child: ListTile(
+                      trailing: Text('${snapshot.data[index].count}'),
+                      title: Text(snapshot.data[index].tag +
+                          " " +
+                          '${snapshot.data[index].count}' +
+                          "회"),
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    DetailScreen(snapshot.data[index])));
+                      },
+                    ),
                   );
                 },
               ),

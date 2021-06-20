@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import '../models/Stadium.dart';
+import '../models/Instagram.dart';
 
 class DetailScreen extends StatelessWidget {
-  final Stadium stadium;
-  DetailScreen(this.stadium);
+  final Instagram instagram;
+  DetailScreen(this.instagram);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(stadium.name),
+        title: Text('${instagram.tag}'),
       ),
-      body: Container(child: Image.network(stadium.stadium_cover)),
+      body: Container(),
     );
   }
 }
