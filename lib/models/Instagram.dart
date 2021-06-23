@@ -12,7 +12,7 @@ class Instagram {
 
   static Future<List<Instagram>> fetchStadiums() async {
     //요청주소
-    String url = "http://letsego.site/api/v1/insta-tag/";
+    String url = "http://letsego.site/api/v1/post-instagram-tag-most/";
 
     //요청 조건을 보낼 때
     Map<String, String> headers = {};
@@ -43,9 +43,6 @@ class Instagram {
   }
 
   factory Instagram.fromJson(Map<String, dynamic> json) {
-    return Instagram(
-      count: json['count'],
-      tag: (json['tag'] == null) ? "-" : json['tag'],
-    );
+    return Instagram(count: json['count'], tag: json['tag']);
   }
 }
