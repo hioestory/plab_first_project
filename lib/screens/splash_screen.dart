@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'main_screen.dart';
+import 'main_screen_instagram.dart';
+import 'main_screen_naver.dart';
+
 import 'dart:async';
 
 class SplashScreen extends StatefulWidget {
@@ -17,7 +19,7 @@ class Splash extends State<SplashScreen> {
     Timer(
         Duration(seconds: 3),
         () => Navigator.of(context).pushReplacement(MaterialPageRoute(
-            builder: (BuildContext context) => MainScreen())));
+            builder: (BuildContext context) => MainScreenNaver())));
   }
 
   @override

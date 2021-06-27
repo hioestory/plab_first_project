@@ -10,7 +10,18 @@ class Instagram {
     this.tag,
   });
 
-  static Future<List<Instagram>> fetchStadiums() async {
+//
+//   a("I");
+
+//   int a(String type) {
+//     if (type == 'I') {
+//       return 0;
+//     } else if (type == 'N') {
+// return 1;
+//     }
+//   }
+
+  static Future<List<Instagram>> fetchInstagram() async {
     //요청주소
     String url = "http://letsego.site/api/v1/post-instagram-tag-most/";
 

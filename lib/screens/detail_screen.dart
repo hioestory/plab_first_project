@@ -8,9 +8,11 @@ class DetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('${instagram.tag}'),
+        title: Text(instagram.tag),
       ),
-      body: Container(),
+      body: Container(
+        child: Text(instagram.tag),
+      ),
     );
   }
 }
