@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'main_screen_instagram.dart';
 import 'main_screen_naver.dart';
 
 import 'dart:async';
@@ -24,10 +23,11 @@ class Splash extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    var assetsImage = new AssetImage('assets/images/splash_plablogo.png');
+    var assetsImage = new AssetImage('assets/images/logo.png');
     var image = new Image(image: assetsImage, height: 100);
 
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         /* appBar: AppBar(
           title: Text("MyApp"),
@@ -35,7 +35,9 @@ class Splash extends State<SplashScreen> {
               Colors.blue, //<- background color to combine with the picture :-)
         ),*/
         body: Container(
-          // decoration이 뭔지 잘 이해 못한 것 같은데? 왜 넣었지?
+          decoration: BoxDecoration(
+            color: const Color(0xffFFF9ED),
+          ),
           child: new Center(
             child: image,
           ),

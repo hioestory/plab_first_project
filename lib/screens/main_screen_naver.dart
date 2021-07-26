@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:plab_first_project/screens/main_screen_instagram.dart';
+import 'package:plab_first_project/models/naver.dart';
 import './detail_screen.dart';
 //
-import 'package:plab_first_project/models/Instagram.dart';
 
 class MainScreenNaver extends StatelessWidget {
   @override
@@ -27,11 +26,10 @@ class _MainListState extends State<MainListExample> {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<List<Instagram>>(
-        future: Instagram.fetchInstagram(),
+    return FutureBuilder<List<Naver>>(
+        future: Naver.fetchNaver(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            Instagram instagram = snapshot.data[0];
             return Scaffold(
                 body: SafeArea(
               child: Container(
@@ -117,8 +115,9 @@ class _MainListState extends State<MainListExample> {
                             onPressed: () => Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) =>
-                                        DetailScreen(instagram))),
+                                    builder: (context) => DetailScreen())),
+                            //
+
                             child: Text(
                               // 태그 1등
                               snapshot.data[0].tag,
@@ -149,15 +148,22 @@ class _MainListState extends State<MainListExample> {
                                 fit: FlexFit.tight,
                                 child: Container(
                                   child: Center(
-                                      child: Text(
-                                    // 태그 2등
-                                    snapshot.data[1].tag,
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      fontSize: 55,
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w500,
-                                      fontFamily: 'Roboto',
+                                      child: TextButton(
+                                    onPressed: () => Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                DetailScreen())),
+                                    child: Text(
+                                      // 태그 2등
+                                      snapshot.data[1].tag,
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        fontSize: 55,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w500,
+                                        fontFamily: 'Roboto',
+                                      ),
                                     ),
                                   )),
                                   width: double.infinity,

@@ -12,7 +12,8 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.2
   flutter_native_splash: ^1.1.8+4
-  http: ^0.12.2 
+  http: ^0.12.2
+  url_launcher: ^6.0.9
 
 dev_dependencies:
   flutter_test:
@@ -24,6 +25,7 @@ flutter_native_splash:
 flutter:
   uses-material-design: true
   assets:
+    - assets/images/logo.png
     - assets/images/splash.png
     - assets/images/splash_plablogo.png
   fonts:

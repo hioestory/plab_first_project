@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:plab_first_project/screens/main_screen_naver.dart';
-import './detail_screen.dart';
 //
 import 'package:plab_first_project/models/Instagram.dart';
 
@@ -31,7 +29,6 @@ class _MainListState extends State<MainListExample> {
         future: Instagram.fetchInstagram(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
-            Instagram instagram = snapshot.data[0];
             return Scaffold(
                 body: SafeArea(
               child: Container(
